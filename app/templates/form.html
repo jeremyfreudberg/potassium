@@ -1,0 +1,23 @@
+<style type = 'text/css'>
+ul {
+	list-style-type: none;
+	}
+</style>
+<h2>Nutrition!</h2>
+  <form action="/" method=post>
+    {{ form.hidden_tag() }}
+ 
+    {{ form.food.label }}
+    {{ form.food }} <br><br>
+ 
+    {{ form.element.label }}
+    {{ form.element }} <br>
+ 
+    {{ form.amount.label }}
+    {{ form.amount(size=1) }}
+ 
+    {{ form.unit.label }}
+    {{ form.unit }} <br><br>
+ 
+    {{ form.submit }}
+  </form>

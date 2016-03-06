@@ -10,5 +10,5 @@ class Nutrition(Form):
     unit = SelectField('(Unit)', choices=[('ounces','Ounces'), ('pounds','Pounds'),\
                                           ('cups', 'Cups'), ('teaspoons','Teaspoons'),\
                                           ('tablespoons', 'Tablespoons')],\
-                       validators=[DataRequired()])
+                       validators=[DataRequired()], default='cups')
     submit= SubmitField('Submit')

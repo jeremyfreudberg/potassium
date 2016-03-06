@@ -1,5 +1,6 @@
 import wolframalpha
-c = wolframalpha.Client('9H34J8-W8T863XLVY')
+from .constants import APP_KEY
+c = wolframalpha.Client(APP_KEY)
 
 def process(element, food, amount, unit):
     query = '{} in {} {} of {} to milligrams'.format(element, amount, unit, food)

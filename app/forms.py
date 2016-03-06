@@ -9,9 +9,8 @@ class Nutrition(Form):
     element = RadioField('Element: ', choices=[('potassium','Potassium'), ('sodium','Sodium')],\
                          validators = [DataRequired()])
     amount = IntegerField('Amount: ', validators=[DataRequired()])
-    unit = SelectField('(Unit)', choices=[('ounces','Ounces'),\
-                                        ('pounds','Pounds'),\
-                                        ('teaspoons','Teaspoons'), \
-                                        ('tablespoons', 'Tablespoons')],\
+    unit = SelectField('(Unit)', choices=[('ounces','Ounces'), ('pounds','Pounds'),\
+                                          ('cups', 'Cups'), ('teaspoons','Teaspoons'),\
+                                          ('tablespoons', 'Tablespoons')],\
                        validators=[DataRequired()])
     submit= SubmitField('Submit')

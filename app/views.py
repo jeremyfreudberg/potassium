@@ -18,3 +18,7 @@ def info():
         return render_template('results.html', query=query, mg=mg)
     elif request.method == 'GET':
         return render_template('form.html',form=form)
+    
+@app.errorhandler(500)
+def internal(e):
+    return render_template('error.html'), 500

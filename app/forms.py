@@ -6,7 +6,7 @@ from wtforms.validators import DataRequired
 
 class Nutrition(Form):
     food = StringField('Food: ', validators=[DataRequired()])
-    amount = IntegerField('Amount: ', validators=[DataRequired()])
+    amount = StringField('Amount: ', validators=[DataRequired()])
     unit = SelectField('(Unit)', choices=[('ounces','Ounces'), ('pounds','Pounds'),\
                                           ('cups', 'Cups'), ('teaspoons','Teaspoons'),\
                                           ('tablespoons', 'Tablespoons')],\

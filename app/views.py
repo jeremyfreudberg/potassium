@@ -1,4 +1,4 @@
-from flask import render_template, request, flash
+from flask import render_template, request
 from app import app
 from .forms import Nutrition
 from .api import process
@@ -10,14 +10,18 @@ def info():
     if request.method == 'POST':
         if form.validate_on_submit():
             food = request.form.get("food")
-            element = request.form.get("element")
             amount = request.form.get("amount")
             unit = request.form.get("unit")
-            from_api = process(element, food, amount, unit)
-            query_raw = from_api[0]
-            mg = from_api[1]
-            query = nice(query_raw, element)
-            return render_template('results.html', query=query, mg=mg)
+            from_api = process(food, amount, unit)
+            potassium = from_api[0]
+            sodium = from_api[1]
+            potassium_raw = potassium[0]
+            potassium_mg = potassium[1]
+            sodium_raw = sodium[0]
+            sodium_mg = sodium[1]
+            potassium_nice = nice(potassium_raw, 'Potassium')
+            sodium_nice = nice(sodium_raw, 'Sodium')
+            return render_template('results.html', k=potassium_nice, k_mg=potassium_mg, na=sodium_nice, na_mg=sodium_mg)
         else:
             return render_template('form.html',form=form)
     elif request.method == 'GET':

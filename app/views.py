@@ -16,9 +16,9 @@ def info():
             potassium = from_api[0]
             sodium = from_api[1]
             potassium_raw = potassium[0]
-            potassium_mg = potassium[1]
+            potassium_mg = potassium[1][:-13]
             sodium_raw = sodium[0]
-            sodium_mg = sodium[1]
+            sodium_mg = sodium[1][:-13]
             potassium_nice = nice(potassium_raw, 'Potassium')
             sodium_nice = nice(sodium_raw, 'Sodium')
             return render_template('results.html', k=potassium_nice, k_mg=potassium_mg, na=sodium_nice, na_mg=sodium_mg)

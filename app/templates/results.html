@@ -1,4 +1,7 @@
-<h3>
-{{ query }} <br>
-{{ mg }}
-</h3>
+{% extends "pretty.html" %}
+{% block page_content %}
+<u><h2>{{ query }}<h2></u>
+<h1>{{ mg }}</h1><br>
+<a href="/" class="btn-lg btn-primary">New search</a>&nbsp;&nbsp;&nbsp;
+<a href="#" class="btn-lg btn-warning">Recalculate</a>
+{% endblock %}

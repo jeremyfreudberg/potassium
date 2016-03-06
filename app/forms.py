@@ -7,8 +7,7 @@ from wtforms.validators import DataRequired
 class Nutrition(Form):
     food = StringField('Food: ', validators=[DataRequired()])
     element = RadioField('Element: ', choices=[('potassium','Potassium'), ('sodium','Sodium')],\
-                         validators = [DataRequired()],\
-                         default='k')
+                         validators = [DataRequired()])
     amount = IntegerField('Amount: ', validators=[DataRequired()])
     unit = SelectField('(Unit)', choices=[('ounces','Ounces'),\
                                         ('pounds','Pounds'),\

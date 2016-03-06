@@ -1,23 +1,25 @@
-<style type = 'text/css'>
+{% extends "pretty.html" %}
+<!--<style type = 'text/css'>
 ul {
 	list-style-type: none;
 	}
-</style>
-<h2>Nutrition!</h2>
+</style>-->
+{% block page_content %}
+<h2>
   <form action="/" method=post>
     {{ form.hidden_tag() }}
  
     {{ form.food.label }}
     {{ form.food }} <br><br>
- 
+	<span class="list-unstyled">
     {{ form.element.label }}
-    {{ form.element }} <br>
+    {{ form.element }}</span> <br>
  
     {{ form.amount.label }}
     {{ form.amount(size=1) }}
  
     {{ form.unit.label }}
     {{ form.unit }} <br><br>
- 
-    {{ form.submit }}
-  </form>
+	<input id = "submit" name="submit" type="submit" value="Submit" class="btn-lg btn-primary" />
+  </form></h2>
+{% endblock %}

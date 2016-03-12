@@ -35,7 +35,3 @@ def info():
 @app.errorhandler(500)
 def internal(e):
     return render_template('error.html'), 500
-
-@app.route('/test')
-def test():
-    return render_template('wolfram_fail.html')

@@ -1,0 +1,9 @@
+{% extends "pretty.html" %}
+{% block page_content %}
+<h2>There was some issue getting the nutrition info...however, sometimes Google will know:</h2>
+<h4 style="color:red">(A new tab will open)</h4>
+<a target="_blank" href="https://www.google.com/?gws_rd=ssl#q=potassium in {{query}}" class="btn-lg btn-success">Check Potassium via Google</a><br><br>
+<a target="_blank" href="https://www.google.com/?gws_rd=ssl#q=sodium in {{query}}" class="btn-lg btn-info">Check Sodium via Google</a>
+<br><br><br>
+<a href="/" class="btn-lg btn-primary">New search</a>
+{% endblock %}

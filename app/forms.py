@@ -5,6 +5,7 @@ from wtforms.validators import DataRequired
 
 
 class Nutrition(Form):
+    """ Create the form for making queries to Wolfram Alpha """
     food = StringField('Food: ', validators=[DataRequired()])
     amount = StringField('Amount: ', validators=[DataRequired()])
     unit = SelectField('(Unit)', choices=[('ounces','Ounces'), ('pounds','Pounds'),\

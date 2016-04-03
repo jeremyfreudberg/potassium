@@ -6,6 +6,12 @@ from .format_results import nice
 
 @app.route('/', methods=['GET', 'POST'])
 def info():
+    """
+    This is the main page.
+    For a new request or invalid form, just return the form.
+    Otherwise, process the input and display the results.
+    Emphasis on good UX, as always.
+    """
     form = Nutrition()
     if request.method == 'POST':
         if form.validate_on_submit():
@@ -34,4 +40,5 @@ def info():
     
 @app.errorhandler(500)
 def internal(e):
+    """ In case of any hiccup in the application, one catch-all error. """
     return render_template('error.html'), 500
